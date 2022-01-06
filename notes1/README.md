@@ -7,11 +7,13 @@
  
 2.  Akse file Middleware pada app/http/middleware
     Masukkan code berikut :
-        ```
-        if (!$request->secure() && env('APP_ENV') === 'production') {
-            return redirect()->secure($request->getRequestUri());
-        }
-        ```
+
+    ```
+    if (!$request->secure() && env('APP_ENV') === 'production') {
+        return redirect()->secure($request->getRequestUri());
+    }
+    ```
+
 3.  Setting midleware pada kernel.php
     Letakkan code berikut pada middlewareGroups[web]
     ```
